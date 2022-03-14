@@ -1,0 +1,19 @@
+{
+  "name": "class2022",
+  "version": "1.0.0",
+  "description": "webclass2022",
+  "main": "app.js",
+  "scripts": {
+    "devstart": "nodemon app.js",
+    "test": "node app.js"
+  },
+  "author": "liron",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
