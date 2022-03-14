@@ -4,5 +4,16 @@
 GET http://localhost:3000/post
 
 ###
+GET http://localhost:3000/post?sender=liron
+###
+GET http://localhost:3000/post/622f09afd5fa3a81dc48fa5b
+###
 
 POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+    "message" : "this is my first message",
+    "sender" : "liron"
+}
+
