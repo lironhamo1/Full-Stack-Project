@@ -59,7 +59,13 @@ const getPostById = async (req, res)=>{
 
     try{
         post = await Post.findById(id)
-        res.status(200).send(post)
+        if (post == null){
+            res.status(400).send({
+                'err': 'post doesnot exists'
+            })
+        }else{
+                    res.status(200).send(post)
+        }
     }catch(err){
         res.status(400).send({
             'err': err.message
@@ -67,11 +73,28 @@ const getPostById = async (req, res)=>{
     }
 }
 
+const deletePostById=async(req,res)=>{
+    console.log('deletePostById id=' + req.params.id)
+    const id = req.params.id
+    if (id == null | id == undefined){
+        return res.status(400).send({'err':'no id provided'})
+    }
+
+    try{
+        await Post.deleteOne({"_id":id})
+        res.status(200).send()
+    }catch(err){
+        res.status(400).send({
+            'err': err.message
+        })
+    }
+}
 
  
 module.exports = {
     getAllPosts,
     createNewPost,
-    getPostById
+    getPostById,
+    deletePostById
 }
     
