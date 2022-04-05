@@ -17,3 +17,21 @@ Content-Type: application/json
     "sender" : "liron"
 }
 
+###
+
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email" : "t11@a.com",
+    "password" : "2282222"
+}
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email" : "t11@a.com",
+    "password" : "2282422"
+}
