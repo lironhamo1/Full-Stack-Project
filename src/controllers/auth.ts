@@ -104,6 +104,7 @@ import jwt from "jsonwebtoken";
       );
       user.refreshToken = refreshToken;
       await user.save();
+
       res.status(StatusCodes.OK).send({
         access_token: accessToken,
         refresh_token: refreshToken,
@@ -129,7 +130,7 @@ import jwt from "jsonwebtoken";
       return res.sendStatus(StatusCodes.FORBIDDEN);
     }
     token = token.split(" ")[1];
-    jwt.verify(token, process.env.REFRESH_TOKEN_SECRET, async (err, userId) => {
+    jwt.verify(token, process.env.REFRESH_TOKEN_SECRET,async(err, userId) => {
       if (err != null) {
         return res.sendStatus(StatusCodes.FORBIDDEN);
       }

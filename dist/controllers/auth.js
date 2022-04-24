@@ -89,7 +89,8 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const accessToken = yield jsonwebtoken_1.default.sign({ _id: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: process.env.TOKEN_EXPIRATION });
         const refreshToken = yield jsonwebtoken_1.default.sign({ _id: user._id }, process.env.REFRESH_TOKEN_SECRET, {});
         user.refreshToken = refreshToken;
-        yield user.save();
+        yield user_model_1.default.updateOne(user);
+        //await user.save();
         res.status(http_status_codes_1.StatusCodes.OK).send({
             access_token: accessToken,
             refresh_token: refreshToken,

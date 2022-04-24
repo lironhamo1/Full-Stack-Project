@@ -3,6 +3,7 @@ import request from 'supertest'
 import app from '../server'
 import mongoose from 'mongoose'
 import User from "../models/user_model";
+import jest from "jest"
 
 
 

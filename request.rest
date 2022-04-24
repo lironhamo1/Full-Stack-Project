@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
     "message" : "this is my first message",
-    "sender" : "liron"
+    "sender" : "OHAD"
 }
 
 ###
@@ -23,7 +23,7 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "email" : "t11@a.com",
+    "email" : "t21@a.com",
     "password" : "2282222"
 }
 ###
@@ -32,6 +32,6 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email" : "t11@a.com",
-    "password" : "2282422"
+    "email" : "t21@a.com",
+    "password" : "2282222"
 }

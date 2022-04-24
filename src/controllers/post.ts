@@ -56,10 +56,10 @@ const getPostById = async (req: Request, res:Response)=>{
  */
 const createNewPost = async (req:Request, res:Response) => {
     console.log(req.body)
-
+    const sender=req.body._id
     const post = new Post({
         message: req.body.message,
-        sender: req.body.sender
+        sender: sender
     })
 
     try {
